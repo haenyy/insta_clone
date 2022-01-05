@@ -1,0 +1,273 @@
+.sprite_insta_icon {
+    display: inline-block;  /* 로고가 가로로 정렬받게 하기 위함 */
+    background: url('../imgs/background01.png') no-repeat -53px -235px;
+    width: 22px;
+    height: 22px;
+}
+
+.sprite_write_logo {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -94px -72px;
+    width: 103px;
+    height: 29px;
+}
+
+.sprite_compass_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -130px -286px;
+    width: 23px;
+    height: 23px;
+}
+
+.sprite_user_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -272px -182px;
+    width: 22px;
+    height: 24px;
+}
+
+.sprite_heart_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -52px -261px;
+    width: 24px;
+    height: 22px;
+}
+
+.sprite_small_search_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -337px -246px;
+    width: 10px;
+    height: 10px;
+}
+
+.sprite_more_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -301px -218px;
+    width: 15px;
+    height: 3px;
+}
+
+.sprite_bubble_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -239px -202px;
+    width: 24px;
+    height: 24px;
+}
+
+.sprite_share_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -324px -52px;
+    width: 21px;
+    height: 24px;
+}
+
+.sprite_bookmark_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -237px -286px;
+    width: 19px;
+    height: 24px;
+}
+
+.sprite_bookmark_outline.on {
+    background: url('../imgs/background01.png') no-repeat -159px -286px;
+    width: 19px;
+    height: 24px;
+}
+
+.sprite_small_heart_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -323px -274px;
+    width: 12px;
+    height: 11px;
+}
+
+.sprite_camera_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -271px -104px;
+    width: 24px;
+    height: 22px;
+}
+
+.sprite_insta_big_icon {
+    display: inline-block;
+    background: url('../imgs/background02.png') no-repeat -98px -150px;
+    width: 175px;
+    height: 51px;
+}
+.sprite_plus_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -187px -202px;
+    width: 23px;
+    height: 23px;
+}
+
+body{
+    background:#fafafa;
+}
+
+
+#header{
+    width: 100%;    /* 공중에 뜨기 위함 */
+    position: absolute; /* 가장 위에 올라가 있어야 하기 위함 */
+    z-index: 999; /* absolute 의 경우 최소 x 축에서 1개 y 축에서 1개의 값을 주어야 함 */
+    left: 0; top: 0;
+    background:white;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+#header .inner{ /* inner 안에 컨텐츠를 넣으면 안에 값이 들어옴 */
+    width: 975px;
+    height: 77px; /* 높이 값은 header 가 아닌 header 안의 자식들에게 주기 */
+    margin: 0 auto; /* 가운데 정렬 */
+    display: flex; /* 가로 배치 */
+    justify-content: space-between; /* x 축 정렬_공간을 자동으로 분배함 */
+    align-items: center; /* y 축 정렬 */
+}
+
+#header .inner .logo > a{
+    color:transparent;  /* 배경색을 투명하게 만듦 -로고 사이의 글자 없앰 */
+}
+
+#header .inner .logo div{
+    vertical-align: middle;  /* 아이콘 일직선으로 */
+}
+
+#header .inner .logo div:nth-child(2){
+    transform: translateY(2px);  /* instagram 로고를 아래로 내림 */
+}
+
+#header .inner .logo .sprite_insta_icon{
+    position: relative; /* after에게 위치 기준을 전달해주기 위함 */
+    margin-right: 30px;
+}
+
+#header .inner .logo .sprite_insta_icon:after{
+    content: '';    /* 공백을 받아옴 */
+    width: 1px;
+    height: 28px;
+    background: #000;
+    position: absolute; /* 부모를 기준으로 위치를 잡음 */
+    right: -15px;
+    top: -4px;  /* 막대 바를 위로 살짝 올림  */
+    /*transition:all .5s;*/
+}
+
+#header .search_box{
+    position: relative; /* 기준점을 잡고 가로 배치 */
+}
+
+#search-field{
+    width: 185px;
+    height: 28px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 3px 30px; /* 위아래 양쪽 */
+    color: #999;
+    font-weight: 400;
+    text-align: left; /* 글자 입력 시 왼쪽부터 보이도록 하기 위함 */
+    font-size: 14px;
+    outline: none; /* 포커스 했을 때 나타나는 파란 선 */
+}
+
+
+#search-field::placeholder{ /* 콜론2개(::) - 속성선택자 */
+    font-size: 0;   /* 포커스가 되지 않을 때 검색 글자가 보이지 않도록 하기 위함 */
+}
+
+#search-field:focus::placeholder{
+    font-size: 14px;    /* 포커스 되었을 때 검색 글자가 보이도록 한다 */
+}
+
+
+#header .search_box .fake_field{
+    position: absolute; /* 검색 창 위에 글자를 보이기 위함 */
+    /* 가운데 배치하는 공식 */
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    pointer-events: none; /* 검색을 눌렀을 때에는 포인터 인식이 안 됨 */
+}
+
+/* 물결(~) - 근처에 있는 fake_field */
+#search-field:focus ~ .fake_field > span:nth-child(1){
+    transform:translateX(-105px); /* 돋보기를 왼쪽으로 이동 */
+}
+
+
+#search-field:focus ~ .fake_field > span:nth-child(2){
+    display: none; /* 포커스 되었을 때 글자 숨기기 */
+}
+
+#header .right_icons{
+    width: 132px; /* 부모값 좌우값 고정 */
+    display: flex;
+    justify-content: space-between; /* x축 정렬_공간을 자동으로 분배함 */
+}
+
+#main_container{
+    padding-top: 130px; /* margin 을 주게 되면 병합 현상이 일어나게 되므로 아래 컨텐츠를 위로 밀 때 padding-top 사용 */
+    display: flex; /* 컨텐츠가 가운데에 위치할 수 있도록 함 */
+    justify-content: center; /* x축 가운데 정렬 */
+}
+
+#main_container .inner{
+    width: 935px;
+}
+
+.contents_box{
+
+}
+
+.contents{
+    width: 614px;
+    /*height: 500px;*/
+    border: 1px solid rgba(0,0,0,0.09);
+    border-radius: 3px; /* 테두리를 둥글게 만듦 */
+    margin-bottom: 60px; /* 다른 contents 들이 밀려야되기 때문에 사이에 여백 주기 */
+}
+
+
+.contents .top{
+    display: flex;  /* 가로 배치 */
+    justify-content: space-between; /* x 축 정렬_공간을 자동으로 분배 */
+    align-items: center;
+    padding: 10px 20px; /* 위아래 양쪽 */
+}
+
+
+
+.contents .top .profile_img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* 테두리를 둥글게 설정 50% -> 원의 형태 */
+    overflow: hidden;    /* 자식이 크기가 넘치지 않도록 한다 */
+    margin-right: 10px;
+}
+
+
+.contents .top .profile_img img{
+    width: 100%;    /* 100% 가 없을 경우 이미지가 들어가지 않음 */
+}
+
+
+.contents .top .user_container{
+    display: flex;  /* 가로 배치 */
+}
+
+.m_text{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.s_text{
+    font-size: 12px;
+}
+
+.contents .img_section{
+    overflow: hidden;   /* 자식이 부모의 크기를 넘지 않도록 한다 */
+}
+
+.contents .img_section img{
+    width: 100%;    /* 부모의 크기 100%를 받는다 */
+}
