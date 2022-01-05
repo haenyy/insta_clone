@@ -15,4 +15,4 @@ printf("Hello Insta world !\n");
 
 ------------
 
-* slack 연동 완료
+* slack 연동 완료!
