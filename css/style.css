@@ -225,6 +225,7 @@ body{
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 3px; /* 테두리를 둥글게 만듦 */
     margin-bottom: 60px; /* 다른 contents 들이 밀려야되기 때문에 사이에 여백 주기 */
+    background: white;
 }
 
 
@@ -271,3 +272,100 @@ body{
 .contents .img_section img{
     width: 100%;    /* 부모의 크기 100%를 받는다 */
 }
+
+.contents .bottom_icons{
+    display: flex;    /* 가로 배치 */
+    justify-content: space-between;    /* x 축 정렬_공간을 자동으로 분배함 */
+    align-items: center;    /* y 축 가운데 정렬 */
+    padding: 10px 20px;
+}
+
+.contents .bottom_icons .left_icons{
+    display: flex;    /* 가로 배치 */
+}
+
+.contents .bottom_icons .left_icons > div{
+    margin-right: 10px;    /* 가로 배치 */
+    cursor: pointer; /* 누를 수 있도록 하기 위함 */
+}
+
+.contents .bottom_icons .right_icon > div{
+    margin-right: 10px;    /* 가로 배치 */
+    cursor: pointer; /* 누를 수 있도록 하기 위함 */
+}
+
+.contents .likes{
+    padding: 5px 20px;
+    color: #262626;
+}
+
+.contents .comment_container{
+    display: flex; /* 가로 배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.contents .comment_container .comment{
+    display: flex; /* 가로 배치 */
+    font-size: 14px;
+}
+
+.contents .comment_container .comment .nick_name{
+    margin-right: 10px; /* 아이디와 댓글 간의 거리 설정 */
+}
+
+.contents .timer{
+    font-size: 10px;
+    letter-spacing: 0.2px; /* 자간 조정(ex-1시간 전) */
+    color: #999;
+    border-bottom: 1px solid rgba(0,0,0,0.09);  /* 아래쪽 실선 추가 */
+    padding: 10px 20px;
+}
+
+.contents .comment_field{
+    min-height: 56px;
+    padding: 0 20px;
+    position: relative; /* 자식들이 absolute 로 자리를 잡기 위함 */
+}
+
+.contents .comment_field input{
+    width: 100%;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: transparent; /* 배경 투명하게 설정 */
+}
+
+.contents .comment_field input:focus ~ .upload_btn{
+    pointer-events: initial; /* 포인터 이벤트 초기화 */
+    opacity: 1;
+}
+
+.contents .comment_field .upload_btn{
+    color: #3897f0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* y 축으로 중앙 정렬 */
+    cursor: pointer;
+    pointer-events: none; /* 처음에는 클릭이 되지 않도록 한다 */
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
